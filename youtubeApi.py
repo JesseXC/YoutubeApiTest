@@ -35,7 +35,8 @@ class ChannelStats:
         for i in range(1, len(self.channels)):
             if self.get_subscribers(self.channels[i]) > max_info[0]:
                 max_info = [self.get_subscribers(self.channels[i]), self.channels[i]]
-        print(f"The Winner of the Subscriber Battle is: {max_info[1]} with {max_info[0]} subscribers!")
+        print(f"The Winner of the Subscriber Battle is:
+        {max_info[1]} with {max_info[0]} subscribers!")
         return max_info
 
     def add_channel(self, channel_name):
