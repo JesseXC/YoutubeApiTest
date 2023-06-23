@@ -2,7 +2,7 @@ import requests
 from googleapiclient.discovery import build
 
 base_url = "https://www.googleapis.com/youtube/v3"
-api_key = 'AIzaSyAUTGuVJmt1eCA33Se8Nvu1Pl8_KYi8RdU'
+api_key = ''
 headers = {
     "Content-Type": "application/json",
 }
