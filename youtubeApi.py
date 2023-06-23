@@ -1,25 +1,11 @@
 import requests
 from googleapiclient.discovery import build
 
-# base_url = "https://www.googleapis.com/youtube/v3"
-api_key = 'AIzaSyAUTGuVJmt1eCA33Se8Nvu1Pl8_KYi8RdU'
-# headers = {
-#     "Content-Type": "application/json",
-# }
-# url = f"{base_url}/videos"
-# params = {
-#     "part": "snippet",
-#     "id": 'iUMgIPlWHO8',
-#     "key": api_key
-# }
-# response = requests.get(url, headers=headers, params=params)
-# response_json = response.json()
 
-youtube = build(
-    'youtube',
-    'v3',
-    developerKey=api_key
-)
+api_key = 'YOUR_API_KEY'
+
+youtube = build('youtube', 'v3', developerKey=api_key)
+
 
 class ChannelStats:
     def __init__(self, apikey, channels=['Youtube']):
@@ -32,7 +18,7 @@ class ChannelStats:
         for channel in self.channels:
             request = self.youtube.channels().list(
                 part='statistics',
-                forUsername=f'{channel}'
+                forUsername=channel
             )
             response = request.execute()
             self.channel_statistics.append(response['items'][0]['statistics'])
