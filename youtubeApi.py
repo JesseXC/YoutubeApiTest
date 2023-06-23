@@ -25,7 +25,8 @@ class ChannelStats:
         return self.channel_statistics
 
     def get_subscribers(self, channel_name):
-        return int(self.channel_statistics[self.channels.index(channel_name)]['subscriberCount'])
+        index = self.channels.index(channel_name)
+        return int(self.channel_statistics[index]['subscriberCount'])
 
     def battle_subcriberCount(self):
         if len(self.channels) == 1:
