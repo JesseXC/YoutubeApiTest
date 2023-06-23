@@ -21,7 +21,10 @@ class ChannelStatsTest(unittest.TestCase):
         initial_channel_count = len(self.channel_stats.channels)
         self.channel_stats.add_channel("BBC")
         new_channel_count = len(self.channel_stats.channels)
-        self.assertEqual(new_channel_count, initial_channel_count + 1)  # Assuming one channel was added
+        self.assertEqual(
+            new_channel_count,
+            initial_channel_count + 1
+        )
 
 
 if __name__ == '__main__':
